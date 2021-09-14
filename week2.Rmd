@@ -1,0 +1,15 @@
+---
+title: "week2"
+author: "Madison Dunn"
+date: "9/14/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+install.packages("readr")
+```
+
