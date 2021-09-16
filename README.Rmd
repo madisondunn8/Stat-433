@@ -9,9 +9,15 @@ where i'm gonna put my hw stuff yay
 
 1. make a new rmarkdown file
 2. change output to github_document
-3. save file as README.Rmd
+- do it this way to push to github 
+then output html document and turn in .html on canvas 
+
+Include a link to github in your html document 
+
+- do str(data) and some plot to show the data 
 
 ```{r}
+library(readr)
 bridges = read_csv("WI20.csv")
 str(bridges)
 head(bridges)
