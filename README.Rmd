@@ -1,0 +1,20 @@
+---
+title: "hw1"
+author: "Madison Dunn"
+date: "9/16/2021"
+output: github_document
+---
+
+where i'm gonna put my hw stuff yay
+
+1. make a new rmarkdown file
+2. change output to github_document
+3. save file as README.Rmd
+
+```{r}
+bridges = read_csv("WI20.csv")
+str(bridges)
+head(bridges)
+plot(bridges$YEAR_BUILT_027, bridges$COUNTY_CODE_003) #test plot for bridges problem
+```
+
