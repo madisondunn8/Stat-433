@@ -2,9 +2,10 @@
 title: "hw1"
 author: "Madison Dunn"
 date: "9/16/2021"
-output: html_document
+output: github_document
 ---
 
+Github link: https://github.com/madisondunn8/Stat-433
 
 ```{r}
 library("readr")
@@ -22,4 +23,3 @@ ggplot(bridges, aes(x=YEAR_BUILT_027, y=INVENTORY_RATING_066, col=HIGHWAY_DISTRI
   xlab("Year Built") +
   ylab("Inventory Rating")
 ```
-

@@ -3,6 +3,8 @@ hw1
 Madison Dunn
 9/16/2021
 
+Github link: <https://github.com/madisondunn8/Stat-433>
+
 ``` r
 library("readr")
 ```
