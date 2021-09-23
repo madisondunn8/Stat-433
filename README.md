@@ -13,6 +13,21 @@ library("readr")
 
 ``` r
 library("ggplot2")
+library("dplyr")
+```
+
+    ## 
+    ## Attaching package: 'dplyr'
+
+    ## The following objects are masked from 'package:stats':
+    ## 
+    ##     filter, lag
+
+    ## The following objects are masked from 'package:base':
+    ## 
+    ##     intersect, setdiff, setequal, union
+
+``` r
 bridges = read_csv("WI20.csv")
 ```
 
@@ -283,6 +298,25 @@ head(bridges)
     ## #   SUBROUTE_NO_013B <dbl>, LAT_016 <dbl>, LONG_017 <chr>, ...
 
 ``` r
+bridges = bridges %>% select(
+  contains("year") , contains("rating"), contains("district"))
+str(bridges)
+```
+
+    ## tibble [14,271 x 11] (S3: tbl_df/tbl/data.frame)
+    ##  $ YEAR_BUILT_027        : num [1:14271] 1932 1974 1948 1979 1977 ...
+    ##  $ YEAR_ADT_030          : num [1:14271] 2019 2019 2018 2018 2018 ...
+    ##  $ YEAR_OF_IMP_097       : num [1:14271] 2019 2019 2018 2018 2018 ...
+    ##  $ YEAR_RECONSTRUCTED_106: num [1:14271] 1958 1994 1990 0 0 ...
+    ##  $ YEAR_OF_FUTURE_ADT_115: num [1:14271] 2039 2039 2038 2038 2038 ...
+    ##  $ OPR_RATING_METH_063   : num [1:14271] 2 2 2 1 1 1 1 2 1 1 ...
+    ##  $ OPERATING_RATING_064  : num [1:14271] 24.7 7.3 21.6 31.5 40.6 47.7 47.7 31.2 70.2 53.9 ...
+    ##  $ INV_RATING_METH_065   : num [1:14271] 2 2 2 1 1 1 1 1 1 1 ...
+    ##  $ INVENTORY_RATING_066  : num [1:14271] 17.8 5 15.1 23.1 29.7 35.8 35.8 22.9 42.4 42.5 ...
+    ##  $ LOWEST_RATING         : num [1:14271] 4 4 5 5 5 7 6 5 5 7 ...
+    ##  $ HIGHWAY_DISTRICT_002  : chr [1:14271] "07" "07" "06" "03" ...
+
+``` r
 ggplot(bridges, aes(x=YEAR_BUILT_027, y=INVENTORY_RATING_066, col=HIGHWAY_DISTRICT_002)) +
   geom_jitter() +
   scale_x_continuous() +
@@ -295,4 +329,4 @@ ggplot(bridges, aes(x=YEAR_BUILT_027, y=INVENTORY_RATING_066, col=HIGHWAY_DISTRI
 
     ## Warning: Removed 14 rows containing missing values (geom_point).
 
-![](README_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
