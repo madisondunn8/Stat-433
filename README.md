@@ -3,7 +3,7 @@ title: "hw1"
 author: "Madison Dunn"
 date: "9/16/2021"
 output:
-  html_document: default
+  github_document: default
 ---
 
 Github link: https://github.com/madisondunn8/Stat-433
