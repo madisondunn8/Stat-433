@@ -4,12 +4,13 @@ Madison Dunn
 9/16/2021
 
 ``` r
-library(readr)
+library("readr")
 ```
 
     ## Warning: package 'readr' was built under R version 4.0.5
 
 ``` r
+library("ggplot2")
 bridges = read_csv("WI20.csv")
 ```
 
@@ -280,7 +281,16 @@ head(bridges)
     ## #   SUBROUTE_NO_013B <dbl>, LAT_016 <dbl>, LONG_017 <chr>, ...
 
 ``` r
-plot(bridges$YEAR_BUILT_027, bridges$COUNTY_CODE_003) #test plot for bridges problem
+ggplot(bridges, aes(x=YEAR_BUILT_027, y=INVENTORY_RATING_066, col=HIGHWAY_DISTRICT_002)) +
+  geom_jitter() +
+  scale_x_continuous() +
+  labs(
+    title="Inventory Rating vs Year Built of Wisconsin Bridges",
+    col="Highway District") +
+  xlab("Year Built") +
+  ylab("Inventory Rating")
 ```
+
+    ## Warning: Removed 14 rows containing missing values (geom_point).
 
 ![](README_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->
