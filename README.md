@@ -3,23 +3,6 @@ hw1
 Madison Dunn
 9/16/2021
 
-where i’m gonna put my hw stuff yay
-
-1.  make a new rmarkdown file
-2.  change output to github\_document
-
-<!-- end list -->
-
-  - do it this way to push to github then output html document and turn
-    in .html on canvas
-
-Include a link to github in your html document
-
-  - do str(data) and some plot to show the
-    data
-
-<!-- end list -->
-
 ``` r
 library(readr)
 ```
